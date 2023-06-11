@@ -14,7 +14,6 @@ let calendarHtml = '';
 
 calendarHtml += `<h1>${year}年${month}月</h1>`;
 calendarHtml += '<table class="calendar">';
-calendarHtml += '<>';
 
 
 // 曜日の行
@@ -30,8 +29,11 @@ for (let w = 0; w < 6; w++) {
             calendarHtml += '<td>' + '</td>';
         } else if (dayCount > endDayCount) {  // 月末日以降に空白
             calendarHtml += '<td>' + '</td>';
-        } else if(dayCount < today) {  //当日より前をグレーアウトさせるためのクラス
+        } else if (dayCount < today) {  //当日より前をグレーアウトさせるためのクラス
             calendarHtml += `<td class='gray'>${dayCount}</td>`;
+            dayCount++;
+        } else if (dayCount === today) {
+            calendarHtml += `<td class='today'>${dayCount}</td>`;
             dayCount++;
         } else {
             calendarHtml += `<td>${dayCount}</td>`;

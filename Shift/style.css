@@ -1,0 +1,152 @@
+@charset 'UTF-8';
+
+html {
+    font-size: 100%;
+}
+
+body {
+    width: 100%;
+}
+
+/* Calendar
+----------------------------------------- */
+h1 {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px;
+    background-color: #eccc68;
+    border-radius: 3px;
+    margin: 2px;
+    box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.3);
+}
+
+.week:first-child {
+    color: rgb(255, 53, 53);
+}
+
+.week:last-child {
+    color: #0c81ff;
+}
+
+.calendar {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.calendar_container {
+    width: 500px;
+    margin: 0 auto;
+    border-radius: 3px;
+    background: #f2f2f2;
+    color: #1a1a1a;
+}
+
+
+td {
+    padding: 20px;
+    color: #f6f5f4;
+    background-color: #5ebe14;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+td:hover {
+    background-color: #58a71c;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+
+th,
+tr {
+    text-align: center;
+}
+
+th {
+    font-size: 1.3rem;
+    padding: 20px;
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+/* 土日の色変更 */
+tr *:first-child {
+    background-color: #f99ea4;
+}
+
+tr *:first-child:hover {
+    background-color: #de545d;
+}
+
+tr *:last-child {
+    background-color: #81baf8;
+}
+
+tr *:last-child:hover {
+    background-color: #1485ff;
+}
+
+/* 空欄部分の消去 */
+td:empty {
+    background: none;
+    pointer-events: none;
+}
+/* 本日以前のグレーアウト */
+td.gray {
+    color: "2c2c2c" !important;
+    background-color: #d6d6d6 !important;
+    pointer-events: none;
+}
+
+
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+
+}
+
+
+a.btn--circle {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    background: #fff;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  }
+  
+  a.btn--circle i {
+    font-size: 150%;
+    line-height: 60px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    letter-spacing: 0;
+  }
+  a.btn--circle:hover i {
+    line-height: 55px;
+  }

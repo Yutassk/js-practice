@@ -70,7 +70,7 @@ tr *:last-child {
 }
 
 td:hover {
-    background-color: #fdad43;
+    background-color: #ffbf6b;
     color: #fff;
     border-radius: 50%;
 }
@@ -96,8 +96,7 @@ th {
 
 /* 本日以前のグレーアウト */
 td.gray {
-    color: "2c2c2c";
-    background-color: #d6d6d6;
+    color: #b2b2b2;
     pointer-events: none;
 }
 

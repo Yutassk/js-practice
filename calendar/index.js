@@ -17,8 +17,7 @@ let startDay = startDate.getDay(); //月初めの曜日
 const today = date.getDate(); //当日の日付
 let $yearAndMonth = $doc.querySelector('#yearAndMonth'); //年月のh1書き換え用
 
-const thisYear = date.getFullYear();
-const thisMonth = date.getMonth() + 1;
+const thisMonth = date.getMonth() + 1; //today削除用。月が変わっても当月を示す。
 
 // 曜日表示
 for (let i = 0; i < weeks.length; i++) {
@@ -43,21 +42,28 @@ function calendar() {
         }
     }
 
-    // today付与
-    if (thisYear == year && thisMonth == month) {
-        $dateText.forEach(function (value) {
-            if (value.textContent == today) {
-                $dateText[today + startDay - 1].classList.toggle('today');
+    // today,gray付与
+    $dateText.forEach(function (value) {
+        if (value.textContent == today) {
+            $dateText[today + startDay - 1].classList.toggle('today');
+        }
+        if (value.textContent < today) {
+            for (let i = 0; i < today; i++) {
+                $dateText[i + startDay -1].classList.add('gray');
             }
-        })
-    }
+        }
+    })
 
-    // 当月以外のtoday削除
+    // 当月以外のtoday,gray削除
     if (thisMonth != month) {
         $dateText.forEach((value) => {
             if (value.classList.contains('today') == true) {
                 $doc.querySelector('.today').classList.remove('today');
             }
+            if (value.classList.contains('gray') == true) {
+                $doc.querySelector('.gray').classList.remove('gray');
+            }
+
         })
     }
 }
@@ -91,6 +97,8 @@ const prev = () => {
         calendar();
     })
 }
+
 calendar();
 next();
 prev();
+

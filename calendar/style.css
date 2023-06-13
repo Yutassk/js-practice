@@ -22,7 +22,7 @@ h1 {
 }
 
 .week:first-child {
-    color: rgb(255, 53, 53);
+    color: rgb(255, 101, 101);
 }
 
 .week:last-child {
@@ -48,26 +48,38 @@ h1 {
     position: relative;
 }
 
+td.today { /* 当日の色変更 */
+    background-color: #fdac43c9;
+    border-radius: 50%;
+}
 
 td {
-    padding: 20px;
-    color: #f6f5f4;
-    background-color: #5ebe14;
+    padding: 10px;
+    color: #2c2c2c;
+    font-size: 1.6rem;
     border-radius: 2px;
     cursor: pointer;
 }
 
-td:hover {
-    background-color: #58a71c;
+tr *:first-child {
+    color: rgb(255, 101, 101);
 }
 
-td.today { /* 当日の色変更 */
-    background-color: #fdad43;
+tr *:last-child {
+    color: #0c81ff;
 }
+
+td:hover {
+    background-color: #fdad43;
+    color: #fff;
+    border-radius: 50%;
+}
+
 
 table {
-    border-collapse: separate;
+    /* border-collapse: separate; */
     border-spacing: 5px;
+    margin: 0 auto;
 }
 
 th,
@@ -82,25 +94,6 @@ th {
     pointer-events: none;
 }
 
-/* 土日の色変更 */
-/*
-tr *:first-child {
-    background-color: #f99ea4;
-}
-
-tr *:first-child:hover {
-    background-color: #de545d;
-}
-
-tr *:last-child {
-    background-color: #81baf8;
-}
-
-tr *:last-child:hover {
-    background-color: #1485ff;
-}
-*/
-
 /* 本日以前のグレーアウト */
 td.gray {
     color: "2c2c2c";
@@ -113,8 +106,6 @@ td:empty {
     background: none;
     pointer-events: none;
 }
-
-
 
 .btn,
 a.btn,

@@ -7,10 +7,9 @@ html {
 body {
     width: 100%;
 }
-
 /* Calendar
 ----------------------------------------- */
-h1 {
+h2 {
     height: 50px;
     line-height: 50px;
     text-align: center;
@@ -112,7 +111,7 @@ button.btn {
     font-size: 1.3rem;
     font-weight: 700;
     line-height: 1.5;
-    position: relative;
+    /* position: relative; */
     display: inline-block;
     cursor: pointer;
     text-align: center;
@@ -129,7 +128,7 @@ a.prev {
 }
 a.next {
     right: 25%;
-} 
+}
 a.prev {
     left: 25%;
 }
@@ -154,4 +153,8 @@ a.btn--circle i {
 
 a.btn--circle:hover i {
     line-height: 35px;
+}
+
+.hide {
+    display: none;
 }

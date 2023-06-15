@@ -34,9 +34,11 @@ function calendar() {
 
   $yearAndMonth.textContent = `${year}年${month}月`;
 
+  /*
   if (thisMonth <= month && thisYear <= year) {
     $doc.querySelector("#prevBtn").classList.add("hide");
   }
+  */
 
   for (let d = 0; d < $dateText.length; d++) {
     if (d < startDay) {
@@ -74,6 +76,11 @@ function calendar() {
 // 次月へ進む
 const next = () => {
   $nextBtn.addEventListener("click", (e) => {
+
+    if (thisMonth <= month && thisYear <= year) {
+      $doc.querySelector("#prevBtn").classList.remove("hide");
+    }
+
     if (month > 11) {
       year += 1;
       month = 1;
@@ -96,6 +103,11 @@ const next = () => {
 // 前月へ戻る
 const prev = () => {
   $prevBtn.addEventListener("click", (e) => {
+
+    if (thisMonth >= month - 1 && thisYear >= year) {
+      $doc.querySelector("#prevBtn").classList.add("hide");
+    }
+
     if (month < 2) {
       year -= 1;
       month = 12;
@@ -120,14 +132,14 @@ calendar();
 next();
 prev();
 
-
+// 選択した日付をテキストエリアに入力
 function dateSelect() {
   $dateText.forEach(function (select) {
     select.addEventListener("click", (p) => {
         let textDate = new Date(year, month - 1, p.target.textContent);
         textDate = textDate.getDay();
         console.log(weeks[textDate]);
-        $dateSelect.value += p.target.textContent;
+        $dateSelect.value += `${month}/${p.target.textContent} (${weeks[textDate]})\n`;
     });
   });
 }

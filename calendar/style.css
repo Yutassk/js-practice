@@ -9,6 +9,10 @@ body {
 }
 /* Calendar
 ----------------------------------------- */
+.calendar_container {
+    width: 50%;
+}
+
 h2 {
     height: 50px;
     line-height: 50px;
@@ -112,7 +116,7 @@ button.btn {
     font-weight: 700;
     line-height: 1.5;
     /* position: relative; */
-    display: inline-block;
+    /* display: block; */
     cursor: pointer;
     text-align: center;
     vertical-align: middle;
@@ -158,3 +162,31 @@ a.btn--circle:hover i {
 .hide {
     display: none;
 }
+
+/* インプットエリア */
+.select_container {
+    background-color: #0c81ff;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.select_container p {
+    font-size: .8rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+select_title {}
+select_memo {}
+select_example {}

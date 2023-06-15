@@ -20,9 +20,20 @@
     </header>
 
     <main>
-      <div class="select_container">
-        <input id="dateSelect" type="textarea" value="">
-      </div>
+        <div class="select_container">
+            <h3 class="select_title">候補日程</h3>
+            <p class="select_memo">
+                ※候補日程/時間帯を入力してください。<br>
+                候補の区切りは改行で判断されます。
+            </p>
+            <p class="select_example">
+                例:<br>
+                6/15(木)Allday<br>
+                6/16(金)AM<br>
+                6/17(土)PM<br>
+            </p>
+            <textarea id="dateSelect" rows="10" placeholder="候補の区切りは改行で判断されます。また、カレンダーの日付をクリックすると日付が入力されます。"></textarea>
+        </div>
 
       <div class="calendar_container">
         <h2 id="yearAndMonth"></h2>
@@ -102,7 +113,7 @@
         <a
           href=""
           id="prevBtn"
-          class="prev btn btn--circle btn--circle-c btn--shadow"
+          class="prev btn btn--circle btn--circle-c btn--shadow hide"
           ><i class="fas fa-chevron-left"></i
         ></a>
       </div>

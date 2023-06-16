@@ -21,24 +21,18 @@ const thisMonth = date.getMonth() + 1; //today削除用。月が変わっても�
 const thisYear = date.getFullYear(); //today削除用。月が変わっても当月を示す。
 
 const $dateText = $doc.querySelectorAll("#dateText"); //日付入力のtd
-const $dateSelect = $doc.querySelector("#dateSelect");
+const $dateSelect = $doc.querySelector("#dateSelect"); //日付候補入力エリア
 
 // 曜日表示
 for (let i = 0; i < weeks.length; i++) {
   $week[i].textContent = weeks[i];
 } 
 
-
+// カレンダーの日付生成
 function calendar() {
   let dayCount = 1; //日付のカウント
 
   $yearAndMonth.textContent = `${year}年${month}月`;
-
-  /*
-  if (thisMonth <= month && thisYear <= year) {
-    $doc.querySelector("#prevBtn").classList.add("hide");
-  }
-  */
 
   for (let d = 0; d < $dateText.length; d++) {
     if (d < startDay) {
@@ -61,7 +55,7 @@ function calendar() {
           $dateText[i + startDay - 1].classList.add("gray");
         }
       }
-    });
+    })
   } else {
     $dateText.forEach((value) => {
       if (value.classList.contains("today") == true) {
@@ -76,7 +70,7 @@ function calendar() {
 // 次月へ進む
 const next = () => {
   $nextBtn.addEventListener("click", (e) => {
-
+    // 翌月以降でprevボタン出現
     if (thisMonth <= month && thisYear <= year) {
       $doc.querySelector("#prevBtn").classList.remove("hide");
     }
@@ -103,8 +97,8 @@ const next = () => {
 // 前月へ戻る
 const prev = () => {
   $prevBtn.addEventListener("click", (e) => {
-
-    if (thisMonth >= month - 1 && thisYear >= year) {
+    // 当月になったらprevボタン隠す
+    if (thisMonth >= month - 1 && thisYear >= year) { //クリック時点で判断されるためmonth-1
       $doc.querySelector("#prevBtn").classList.add("hide");
     }
 

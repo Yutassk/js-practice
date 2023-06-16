@@ -6,9 +6,17 @@ html {
 
 body {
     width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 }
+
+main {
+
+}
+
 /* Calendar
 ----------------------------------------- */
+
 .calendar_container {
     width: 50%;
 }
@@ -165,7 +173,6 @@ a.btn--circle:hover i {
 
 /* インプットエリア */
 .select_container {
-    background-color: #0c81ff;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -176,17 +183,11 @@ a.btn--circle:hover i {
     font-size: .8rem;
 }
 
-main {
-    display: flex;
-    justify-content: center;
+.select_title {
+    text-align: center;
 }
 
-
-
-
-
-
-
-select_title {}
 select_memo {}
 select_example {}
+
+
